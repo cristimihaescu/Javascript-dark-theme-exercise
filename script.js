@@ -1,38 +1,50 @@
 function switchTheme() {
-  document.getElementsByTagName("h1")[0].classList.toggle("text-white");
   document.body.classList.toggle("bg-dark");
-  document.getElementsByTagName("nav")[0].classList.toggle("navbar-dark");
-  document.getElementsByTagName("nav")[0].classList.toggle("bg-dark");
-  document.getElementsByClassName("card")[0].classList.toggle("text-white");
-  document.getElementsByClassName("card")[0].classList.toggle("bg-dark");
-  document.getElementsByClassName("card")[0].classList.toggle("border-light");
-  document.getElementsByClassName("card")[1].classList.toggle("text-white");
-  document.getElementsByClassName("card")[1].classList.toggle("bg-dark");
-  document.getElementsByClassName("card")[1].classList.toggle("border-light");
-  document.getElementsByClassName("card")[2].classList.toggle("text-white");
-  document.getElementsByClassName("card")[2].classList.toggle("bg-dark");
-  document.getElementsByClassName("card")[2].classList.toggle("border-light");
-  document.getElementsByClassName("column")[0].classList.toggle("col-12");
-  document.getElementsByClassName("column")[1].classList.toggle("col-12");
-  document.getElementsByClassName("column")[2].classList.toggle("col-12");
-  document.getElementsByClassName("table")[0].classList.toggle("table-dark");
-  document.getElementsByTagName("nav")[1].classList.toggle("navbar-dark");
-  document.getElementById("class1").toggle.textContent="This is the dark theme";
-  document.getElementsByTagName("nav")[1].children[0].classList.toggle("justify-content-end");
-  document.getElementById("btnSwitch").classList.toggle("btn-light");
-  var button = document.getElementById("btnSwitch");
-  button.onclick = function () {
-    document.body.classList.toggle("btnSwitch");
-    if (button.body.classList.contains("Activate Dark Theme")) {
-      button.innerText = "Activate Light Theme";
+  const text = document.getElementsByTagName("h1");
+  for (let i = 0; i < text.length; i++) {
+    if (text[i].innerHTML == "This is the Light theme") {
+      text[i].innerHTML = "This is the Dark theme";
+      text[i].style.color = "white";
     } else {
-      button.innerText = "Activate Dark Theme";
+      text[i].innerHTML = "This is the Light theme";
+      text[i].style.color = "black";
     }
   }
+  const nav_collection = document.getElementsByTagName("nav");
+  for (let i = 0; i < nav_collection.length; i++) {
+    nav_collection[i].classList.toggle("navbar-dark");
+    nav_collection[i].classList.toggle("bg-dark");
+  }
+  const h3_collection = document.getElementsByTagName("h3");
+  for (let i = 0; i < h3_collection.length; i++) {
+    h3_collection[i].classList.toggle("mystyle2");
+  }
+  const card_collection = document.getElementsByClassName("card");
+  for (let i = 0; i < card_collection.length; i++) {
+    card_collection[i].classList.toggle("text-white");
+    card_collection[i].classList.toggle("bg-dark");
+    card_collection[i].classList.toggle("border-light");
+  }
+  const column_collection = document.getElementsByClassName("column");
+  for (let i = 0; i < column_collection.length; i++) {
+    column_collection[i].classList.toggle("col-12");
+  }
+  const p_collection = document.getElementsByClassName("p_collection");
+  for (let i = 0; i < p_collection.length; i++) {
+    p_collection[i].classList.toggle("text-white");
+  }
+  const tabel = document.getElementsByTagName("table")[0];
+  tabel.classList.toggle("table-dark");
+  document.getElementsByTagName("nav")[1].classList.toggle("navbar-dark");
+  document
+    .getElementsByTagName("nav")[1]
+    .children[0].classList.toggle("justify-content-end");
+  document.getElementById("btnSwitch").classList.toggle("btn-light");
+
+  let button = document.getElementById("btnSwitch");
+  if (button.innerText == "Activate Dark Theme") {
+    button.innerText = "Activate Light Theme";
+  } else {
+    button.innerText = "Activate Dark Theme";
+  }
 }
-//   if (button.innerText == "Activate Dark Theme") {
-//     button.innerText = "Activate Light Theme";
-//   } else {
-//     button.innerText = "Activate Dark Theme";
-//   }
-// }
